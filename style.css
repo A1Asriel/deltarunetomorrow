@@ -26,8 +26,7 @@ html, body {
 }
 
 img {
-    max-width: 100%;
-    display: block;
+    max-width: -webkit-fill-available;
 }
 
 a {
@@ -35,14 +34,17 @@ a {
     color: unset;
 }
 
-.main {
-    margin: 2rem 1rem;
+main {
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
 }
 
 .logo {
     width: 32rem;
     margin-left: auto;
     margin-right: auto;
+    padding: 2rem;
 }
 
 .tomorrow-container {
@@ -66,7 +68,9 @@ a {
 
 footer {
     text-align: right;
-    margin-top: auto;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 footer a {
