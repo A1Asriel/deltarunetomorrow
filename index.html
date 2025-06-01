@@ -18,19 +18,35 @@
     <link rel="preload" href="https://deltarune.com/assets/fonts/8bitOperatorPlus-Bold.woff" as="font" type="font/woff" crossorigin>
     <link rel="stylesheet" href="style.css">
     <script src="main.js"></script>
+    <script src="geoip.js"></script>
 </head>
 <body>
     <div class="wrapper">
         <main>
             <h1>
-                <a href="https://deltarune.com"><img src="https://deltarune.com/assets/images/logo.png" alt="DELTARUNE" class="logo"></a>
+                <a href="https://deltarune.com">
+                    <div class="logo-container">
+                        <div class="logo">
+                            <img src="assets/Deltarune_vector_logo.svg">
+                        </div>
+                        <div id="overlay" class="stripes-overlay geolimited"></div>
+                        <img style="position: absolute; top: 0%; width: 100%; height: 100%; left: 0; z-index: 2;" src="assets/Deltarune_heart.svg">
+                    </div>
+                </a>
             </h1>
             <div class="tomorrow-container">
                 <h3 class="tomorrow" style="display: none;">Tomorrow</h3>
                 <h3 class="not-tomorrow" style="display: none;">Not tomorrow</h3>
             </div>
         </main>
-        <footer><a href="https://github.com/A1Asriel" target="_blank">by A1Asriel</a></footer>
+        <footer style="display: flex; justify-content: space-between;">
+            <span style="opacity: 0.2; font-size: small;" class="geolimited">
+                <input type="checkbox" checked id="button" style="vertical-align: middle;" onclick="overlay.style.display = button.checked ? 'block' : 'none'; document.cookie = `pride=${button.checked}; path=/;`">
+                <label for="button" style="vertical-align: middle;">Pride</label>
+            </span>
+            <a href="https://github.com/A1Asriel" target="_blank">by A1Asriel</a>
+        </footer>
     </div>
+    <script>overlay.style.display = document.cookie.includes('pride=true') ? 'block' : 'none'; button.checked = document.cookie.includes('pride=true') ? true : false</script>
 </body>
 </html>
