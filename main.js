@@ -1,4 +1,4 @@
-const june5th = new Date("2025-05-05T00:00:00+09:00");
+const june5th = new Date("2025-06-05T00:00:00+09:00");
 
 function isTomorrow() {
     const currentDate = new Date();
